@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shri Shyam Interior | Avant-Garde Craftsmanship</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-container": "#231f20",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary": "#3f2d1e",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#8d8687",
+                        "error": "#ffb4ab",
+                        "on-primary": "#342f30",
+                        "on-tertiary-container": "#9c8371",
+                        "primary-fixed-dim": "#cdc4c5",
+                        "surface-container-highest": "#353534",
+                        "surface-variant": "#353534",
+                        "primary": "#cdc4c5",
+                        "on-primary-fixed": "#1e1b1c",
+                        "surface-bright": "#393939",
+                        "on-surface-variant": "#cfc4c6",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed-variant": "#574333",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary": "#3c2f00",
+                        "secondary": "#e9c349",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#635d5e",
+                        "secondary-fixed": "#ffe088",
+                        "on-secondary-fixed": "#241a00",
+                        "on-tertiary-fixed": "#28180b",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#e9e0e1",
+                        "tertiary-container": "#2d1d10",
+                        "on-primary-fixed-variant": "#4b4546",
+                        "on-secondary-container": "#342800",
+                        "tertiary-fixed": "#fbddc7",
+                        "background": "#131313",
+                        "surface-tint": "#cdc4c5",
+                        "on-surface": "#e5e2e1",
+                        "tertiary": "#dec1ac",
+                        "tertiary-fixed-dim": "#dec1ac",
+                        "outline-variant": "#4c4547",
+                        "secondary-container": "#af8d11",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed-dim": "#e9c349",
+                        "outline": "#988e90"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "0.5rem",
+                        "stack-md": "1.5rem",
+                        "gutter": "2rem",
+                        "stack-lg": "3rem",
+                        "margin-page": "5vw",
+                        "section-gap": "8rem"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Bodoni Moda"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Bodoni Moda"],
+                        "headline-lg": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["80px", { "lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        :root {
+            --cursor-size: 8px;
+            --mx: 0;
+            --my: 0;
+        }
+
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            scroll-behavior: auto;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Custom Cursor */
+        #custom-cursor {
+            width: var(--cursor-size);
+            height: var(--cursor-size);
+            background: #e9c349;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate3d(-50%, -50%, 0);
+            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease;
+        }
+
+        #cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(233, 195, 73, 0.35);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate3d(-50%, -50%, 0);
+            transition: transform 0.08s ease-out, border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .cursor-active {
+            width: 16px !important;
+            height: 16px !important;
+            background-color: #e9c349 !important;
+        }
+
+        .follower-active {
+            border-color: #e9c349 !important;
+            background-color: rgba(233, 195, 73, 0.08) !important;
+            transform: translate3d(-50%, -50%, 0) scale(1.5) !important;
+        }
+
+        .brushed-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #f7e681 50%, #b8860b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: text-shadow 0.5s ease;
+        }
+
+        .brushed-gold:hover {
+            text-shadow: 0 0 15px rgba(233, 195, 73, 0.3);
+        }
+
+        .brushed-gold-bg {
+            background: linear-gradient(135deg, #d4af37 0%, #f7e681 50%, #b8860b 100%);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+
+        .brushed-gold-bg:hover {
+            box-shadow: 0 0 20px rgba(233, 195, 73, 0.35);
+        }
+
+        /* Liquid Button Ripple */
+        .btn-liquid {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-liquid::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 40%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.7s cubic-bezier(0.1, 0.8, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .btn-liquid:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .btn-liquid:hover {
+            transform: translateY(-2px);
+        }
+
+        .walnut-texture {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-color: #161210;
+            position: relative;
+        }
+
+        .walnut-texture::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(19, 19, 19, 0.8) 100%);
+            pointer-events: none;
+        }
+
+        .cinematic-zoom {
+            animation: slowZoom 25s infinite alternate ease-in-out;
+        }
+
+        @keyframes slowZoom {
+            0% {
+                transform: scale(1.05) translate(0px, 0px);
+            }
+
+            100% {
+                transform: scale(1.2) translate(-10px, -5px);
+            }
+        }
+
+        /* Entrance Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .float-in-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .float-in-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .visible {
+            opacity: 1 !important;
+            transform: translate(0) !important;
+        }
+
+        /* 3D Tilt Card Base */
+        .tilt-card {
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .tilt-card>* {
+            transform: translateZ(20px);
+        }
+
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #e9c349 50%, transparent 100%);
+        }
+
+        /* Parallax & 3D Hero Layout */
+        .parallax-bg-layer {
+            transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .parallax-fg-layer {
+            transition: transform 0.1s cubic-bezier(0.25, 1, 0.5, 1);
+            transform-style: preserve-3d;
+        }
+
+        /* Hero Slideshow Styles */
+        .hero-slide {
+            will-change: opacity;
+        }
+
+        /* Text Split Reveal Animations */
+        .reveal-container {
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        .reveal-word {
+            display: inline-block;
+            transform: translateY(110%);
+            opacity: 0;
+            animation: revealWord 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .reveal-word-delay-1 {
+            animation-delay: 0.15s;
+        }
+
+        .reveal-word-delay-2 {
+            animation-delay: 0.3s;
+        }
+
+        .reveal-word-delay-3 {
+            animation-delay: 0.45s;
+        }
+
+        .reveal-word-delay-4 {
+            animation-delay: 0.6s;
+        }
+
+        .reveal-word-delay-5 {
+            animation-delay: 0.75s;
+        }
+
+        .reveal-word-delay-6 {
+            animation-delay: 0.9s;
+        }
+
+        @keyframes revealWord {
+            0% {
+                transform: translateY(110%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .fade-in-delayed {
+            opacity: 0;
+            animation: fadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 1.25s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes numberPulse {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 0px rgba(233, 195, 73, 0));
+            }
+
+            50% {
+                transform: scale(1.08);
+                filter: drop-shadow(0 0 8px rgba(233, 195, 73, 0.35));
+            }
+
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 0px rgba(233, 195, 73, 0));
+            }
+        }
+
+        .number-pulse {
+            animation: numberPulse 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            display: inline-block;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 25;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            opacity: 1;
+        }
+
+        .scroll-indicator-mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid rgba(233, 195, 73, 0.5);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .scroll-indicator-wheel {
+            width: 4px;
+            height: 8px;
+            background-color: #e9c349;
+            border-radius: 2px;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 1.5s infinite ease-in-out;
+        }
+
+        @keyframes scrollWheel {
+            0% {
+                top: 6px;
+                opacity: 1;
+            }
+
+            50% {
+                top: 18px;
+                opacity: 0;
+            }
+
+            100% {
+                top: 6px;
+                opacity: 1;
+            }
+        }
+
+        /* Nav Glassmorphism bottom line */
+        .nav-glow {
+            position: relative;
+        }
+
+        .nav-glow::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(233, 195, 73, 0.25) 50%, transparent);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            #custom-cursor,
+            #cursor-follower {
+                display: none;
+            }
+
+            body {
+                cursor: auto;
+            }
+
+            .fade-in-up,
+            .float-in-left,
+            .float-in-right {
+                transition: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .tilt-card:hover {
+                transform: none;
+            }
+
+            .cinematic-zoom {
+                animation: none;
+            }
+
+            .reveal-word {
+                animation: none;
+                transform: none;
+                opacity: 1;
+            }
+
+            .fade-in-delayed {
+                animation: none;
+                opacity: 1;
+            }
+
+            .scroll-indicator-wheel {
+                animation: none;
+            }
+        }
+
+        /* Hide custom cursor on mobile and tablet screens to optimize performance and usability */
+        @media (max-width: 1024px) {
+
+            #custom-cursor,
+            #cursor-follower {
+                display: none !important;
+            }
+
+            body {
+                cursor: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <div id="custom-cursor"></div>
+    <div id="cursor-follower"></div>
+    <!-- Background Shader Element -->
+    <!-- STITCH_SHADER_START:ANIMATION_24 class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-60" -->
+    <div class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-60" style="display:block;">
+        <canvas id="shader-canvas-ANIMATION_24" style="display:block;width:100%;height:100%"></canvas>
+        <script>
+                (function () {
+                    const canvas = document.getElementById('shader-canvas-ANIMATION_24');
+
+                    // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+                    // This fires on initial layout and whenever the element is resized.
+                    function syncSize() {
+                        let w = canvas.clientWidth || 1280;
+                        let h = canvas.clientHeight || 720;
+                        // On mobile and tablet, reduce resolution to 50% to prevent GPU fill-rate lag
+                        const isMobile = window.innerWidth <= 1024;
+                        if (isMobile) {
+                            w = Math.floor(w * 0.5);
+                            h = Math.floor(h * 0.5);
+                        }
+                        if (canvas.width !== w || canvas.height !== h) {
+                            canvas.width = w;
+                            canvas.height = h;
+                        }
+                    }
+                    if (typeof ResizeObserver !== 'undefined') {
+                        new ResizeObserver(syncSize).observe(canvas);
+                    }
+                    syncSize();
+
+                    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                    if (!gl) return;
+                    const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+                    const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+
+float snoise(vec2 v){
+  const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+           -0.577350269189626, 0.024390243902439);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod(i, 289.0);
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+  + i.x + vec3(0.0, i1.x, 1.0 ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+    dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 a0 = x - floor(x + 0.5);
+  vec3 g = a0 * vec3(m.x, m.y, m.z) + h * vec3(m.x, m.y, m.z);
+  return 130.0 * dot(m, g);
+}
+
+float fbm(vec2 p) {
+    float v = 0.0;
+    float a = 0.5;
+    vec2 shift = vec2(100.0);
+    float c = cos(0.5);
+    float s = sin(0.5);
+    mat2 rot = mat2(c, s, -s, c);
+    for (int i = 0; i < 4; ++i) {
+        v += a * snoise(p);
+        p = rot * p * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 aspect = vec2(u_resolution.x / u_resolution.y, 1.0);
+    vec2 p = (uv - 0.5) * aspect;
+    vec2 mouse = (u_mouse / u_resolution - 0.5) * aspect;
+    
+    // Slow luxurious speed
+    float t = u_time * 0.08;
+    
+    // Mouse movement displacement
+    float mouseDist = length(p - mouse);
+    float mouseInfluence = smoothstep(0.4, 0.0, mouseDist);
+    p -= (p - mouse) * mouseInfluence * 0.12;
+    
+    // Warped fractal brownian motion representing wood flow
+    vec2 q = vec2(
+        fbm(p + vec2(0.0, 0.0) + t * 0.5),
+        fbm(p + vec2(5.2, 1.3) + t * 0.3)
+    );
+    
+    vec2 r = vec2(
+        fbm(p + 4.0 * q + vec2(1.7, 9.2) + t * 0.7),
+        fbm(p + 4.0 * q + vec2(8.3, 2.8) + t * 0.4)
+    );
+    
+    float f = fbm(p + 4.0 * r);
+    
+    // Deep ebony base and dark walnut transition
+    vec3 colorDark = vec3(0.06, 0.05, 0.05); // #0e0e0e
+    vec3 colorWalnut = vec3(0.12, 0.10, 0.09); // #1c1b1b
+    
+    // Golden vein and ambient amber highlights
+    vec3 colorGold = vec3(0.81, 0.66, 0.22); // #d4af37
+    vec3 colorAmber = vec3(0.97, 0.82, 0.45); // Secondary glowing gold
+    
+    vec3 col = mix(colorDark, colorWalnut, clamp(f * 2.0, 0.0, 1.0));
+    
+    // Draw fine veins
+    float veinPattern = smoothstep(0.28, 0.33, f) * smoothstep(0.42, 0.33, f);
+    col = mix(col, colorGold, veinPattern * 0.55);
+    
+    // Ambient cursor lighting
+    float light = exp(-mouseDist * 2.2);
+    col += colorAmber * light * 0.25;
+    
+    // Soft ambient vignette to darken borders
+    float vignette = uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y);
+    vignette = clamp(pow(16.0 * vignette, 0.3), 0.0, 1.0);
+    col *= vignette;
+    
+    gl_FragColor = vec4(col, 0.5);
+}`;
+                    function cs(type, src) {
+                        const s = gl.createShader(type);
+                        gl.shaderSource(s, src);
+                        gl.compileShader(s);
+                        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+                            console.error(gl.getShaderInfoLog(s));
+                        }
+                        return s;
+                    }
+                    const prog = gl.createProgram();
+                    gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+                    gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+                    gl.linkProgram(prog);
+                    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+                        console.error(gl.getProgramInfoLog(prog));
+                    }
+                    gl.useProgram(prog);
+                    const buf = gl.createBuffer();
+                    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+                    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+                    const pos = gl.getAttribLocation(prog, 'a_position');
+                    gl.enableVertexAttribArray(pos);
+                    gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+                    const uTime = gl.getUniformLocation(prog, 'u_time');
+                    const uRes = gl.getUniformLocation(prog, 'u_resolution');
+                    const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+                    let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+                    let targetMouse = { x: canvas.width / 2, y: canvas.height / 2 };
+
+                    window.addEventListener('mousemove', (event) => {
+                        const rect = canvas.getBoundingClientRect();
+                        if (rect.width && rect.height) {
+                            const nx = (event.clientX - rect.left) / rect.width;
+                            const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+                            targetMouse.x = nx * canvas.width;
+                            targetMouse.y = ny * canvas.height;
+                        }
+                    });
+
+                    function render(t) {
+                        if (typeof ResizeObserver === 'undefined') syncSize();
+                        gl.viewport(0, 0, canvas.width, canvas.height);
+
+                        // Smooth mouse coordinates to prevent jittering in shader
+                        mouse.x += (targetMouse.x - mouse.x) * 0.1;
+                        mouse.y += (targetMouse.y - mouse.y) * 0.1;
+
+                        if (uTime) gl.uniform1f(uTime, t * 0.001);
+                        if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+                        if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+                        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+                        requestAnimationFrame(render);
+                    }
+                    render(0);
+                })();
+        </script>
+    </div>
+    <!-- STITCH_SHADER_END:ANIMATION_24 -->
+    <div class="relative z-10">
+        <!-- TopNavBar -->
+        <nav
+            class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-secondary/10 flex justify-between items-center px-margin-page py-6 w-full shadow-sm nav-glow">
+            <a href="#" class="flex items-center gap-3 interactive group logo-nav-wrapper">
+                <img src="logo.png" alt="Shri Shyam Logo"
+                    class="h-9 w-9 object-contain logo-nav-img transition-all duration-[700ms] group-hover:rotate-[360deg] group-hover:scale-110 filter drop-shadow(0 0 4px rgba(233, 195, 73, 0.15)) group-hover:drop-shadow(0 0 10px rgba(233, 195, 73, 0.45))"
+                    style="image-rendering: -webkit-optimize-contrast;" />
+                <span
+                    class="font-display-xl text-base sm:text-lg md:text-headline-md tracking-widest text-primary group-hover:text-secondary transition-colors duration-300">Shri
+                    Shyam Interior</span>
+            </a>
+            <div class="flex gap-3 sm:gap-4 md:gap-gutter items-center flex-wrap md:flex-nowrap">
+                <a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1 transition-colors duration-300 interactive"
+                    href="#">Portfolio</a>
+                <a class="font-label-caps text-label-caps text-on-surface/70 hover:text-secondary transition-colors duration-300 interactive"
+                    href="collections.html">Collections</a>
+                <a class="font-label-caps text-label-caps text-on-surface/70 hover:text-secondary transition-colors duration-300 interactive"
+                    href="#process">Our Story</a>
+                <a class="font-label-caps text-label-caps text-on-surface/70 hover:text-secondary transition-colors duration-300 interactive"
+                    href="#contact">Contact</a>
+            </div>
+        </nav>
+        <!-- Hero Section -->
+        <section class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+            <div class="absolute inset-0 z-0 parallax-bg-layer hero-slideshow">
+                <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-[1500ms] ease-in-out">
+                    <img class="w-full h-full object-cover cinematic-zoom brightness-[0.4]"
+                        data-alt="Grand luxury library"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMDNWxOQfzilw-Bn27mfedf9qKqIrDX7a8SfLFkvugU-y0b3BGKRKsSzfMf0s-bdfg11JAIGAH-H9LygHhvRLZvC3baos_zZbUlpr2p9TG_bPwJrsQqediH_ykMbxamabO-nVpZx06_nb7KpoNfiUfPg7cC4rNRdk5CVzl8fxA-kkTZobBkwifLa80Hxk4sIBYnrnoDpDSUESsL84LZzZi2x8J7yIW0kMpt4to3_lHpq2z_5JlN24-HOvzcu32TIsRTYN9j4-lt3Y" />
+                </div>
+                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-[1500ms] ease-in-out">
+                    <img class="w-full h-full object-cover cinematic-zoom brightness-[0.4]"
+                        data-alt="Modern corporate sanctuary"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT9gSDd4VtB0lQP03NqszJYLqutx0vVvWXdfB7YVBtsWtB1dBN0t676HEdXUsRE2xRLUK2qXkkuziedtISXQMKvAEhMFwCHL32-plecofOrcIZdq5D0Oc75zczpRk30LfmAinWVeJdNlJPmhGp5GYUoC9v39ux16a1BHLSi4-8SmbJXiaQTbc5SIvGmUAUiHu-IIf5E_QBoicxrDI0xUKNe4n8W0MpHYNedRt1r3hBISUjUFalHoxig3clIxRf0u1ubWyTlH-tdNo" />
+                </div>
+                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-[1500ms] ease-in-out">
+                    <img class="w-full h-full object-cover cinematic-zoom brightness-[0.4]"
+                        data-alt="Luxurious master suite"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzVhl1lGdU_5z5_LB6iP4t39h7rCuobc1PZsDNb7BHKLBVG1wKB79bHpG0vpoDyY38HqjBP4DVGoNKNmuMkHYR3uqiCIqnGr9Qe6-nDlTt-mwIu4AiBOVccNS4f4mBabvY28XSRmRLDto0tkB5_hyYXLAcVnWsHAJ1HIkZWvPo06bpNEfFDd6f1NWa_jQHr7Vwa8z9ODNOnhyYixW6CwjgjETEAsW48mo9RAZj7bc4ZQxb6EgAByf_juEB3VlA5G9kchreAu6PDUQ" />
+                </div>
+            </div>
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-background/45 z-10 pointer-events-none">
+            </div>
+            <div class="relative z-20 text-center max-w-4xl px-margin-page parallax-fg-layer select-none">
+                <!-- Hero Logo -->
+                <div class="mb-stack-md flex justify-center fade-in-delayed">
+                    <div class="relative group interactive logo-hero-wrapper">
+                        <div
+                            class="absolute inset-0 bg-secondary/10 blur-xl rounded-full scale-75 group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <img src="logo.png" alt="Shri Shyam Interior Logo"
+                            class="h-28 w-28 object-contain relative z-10 transition-all duration-700 ease-out group-hover:scale-115 group-hover:rotate-12 filter drop-shadow(0 0 10px rgba(233, 195, 73, 0.2)) group-hover:drop-shadow(0 0 22px rgba(233, 195, 73, 0.55))"
+                            style="image-rendering: -webkit-optimize-contrast;" />
+                    </div>
+                </div>
+                <h1
+                    class="font-display-xl text-4xl sm:text-5xl md:text-6xl lg:text-[80px] leading-none mb-stack-lg italic reveal-text-container">
+                    <span class="reveal-container"><span class="reveal-word reveal-word-delay-1"><span
+                                class="brushed-gold">All</span></span></span>
+                    <span class="reveal-container"><span class="reveal-word reveal-word-delay-2"><span
+                                class="brushed-gold">interior</span></span></span>
+                    <span class="reveal-container"><span class="reveal-word reveal-word-delay-3">solutions</span></span>
+                    <span class="reveal-container"><span class="reveal-word reveal-word-delay-4">under</span></span>
+                    <span class="reveal-container"><span class="reveal-word reveal-word-delay-5">one</span></span>
+                    <span class="reveal-container"><span class="reveal-word reveal-word-delay-6">Umbrella.</span></span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface/80 mb-stack-lg max-w-2xl mx-auto fade-in-delayed">
+                    We design beautiful home and office interiors that match your style. From planning to final touch,
+                    we make your dream spaces come to life.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-gutter justify-center items-center fade-in-delayed">
+                    <a href="collections.html"
+                        class="brushed-gold-bg btn-liquid text-surface font-label-caps text-label-caps px-10 py-4 hover:scale-105 transition-all interactive rounded-sm inline-block">Explore
+                        Collections</a>
+                    <a href="https://wa.me/919999995962?text=Hey,%20I'm%20looking%20for%20interior%20work"
+                        target="_blank"
+                        class="border border-secondary/40 text-secondary font-label-caps text-label-caps px-10 py-4 hover:bg-secondary/10 transition-colors interactive rounded-sm inline-block">Contact
+                        WhatsApp</a>
+                </div>
+            </div>
+            <!-- Scroll indicator -->
+            <a href="#services" class="scroll-indicator interactive">
+                <span class="font-label-caps text-[10px] tracking-[0.3em] text-secondary/60 uppercase">Scroll
+                    Down</span>
+                <div class="scroll-indicator-mouse">
+                    <div class="scroll-indicator-wheel"></div>
+                </div>
+            </a>
+        </section>
+        <!-- Stat Counter Section -->
+        <section class="py-stack-lg px-margin-page bg-surface-container-lowest relative overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center relative z-10 max-w-5xl mx-auto">
+                <div>
+                    <div class="font-display-xl text-headline-lg text-secondary inline-block" data-count="500"
+                        data-suffix="+">0</div>
+                    <div class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-2">Completed
+                        Projects</div>
+                </div>
+                <div>
+                    <div class="font-display-xl text-headline-lg text-secondary inline-block" data-count="28"
+                        data-suffix="+">0</div>
+                    <div class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-2">Expert Designers
+                    </div>
+                </div>
+                <div>
+                    <div class="font-display-xl text-headline-lg text-secondary inline-block" data-count="10"
+                        data-suffix="+">0</div>
+                    <div class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-2">Years of
+                        Experience</div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section - Asymmetric Bento -->
+        <section class="py-section-gap px-margin-page" id="services">
+            <div class="mb-section-gap flex flex-col md:flex-row justify-between items-end gap-stack-lg">
+                <div class="max-w-2xl">
+                    <span class="font-label-caps text-label-caps text-secondary">Our Collections</span>
+                    <h2 class="font-headline-lg text-3xl sm:text-4xl md:text-headline-lg mt-stack-sm parallax-header"
+                        data-speed="0.02">Our Design Collections</h2>
+                </div>
+                <div class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    We create beautiful spaces that match your personal taste and style. Every detail is designed to
+                    make your home feel comfortable and look premium.
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Large Focus Card -->
+                <div
+                    class="md:col-span-7 group relative overflow-hidden h-[350px] sm:h-[450px] md:h-[600px] float-in-left tilt-card interactive">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        data-alt="Indian Royal Bedroom" src="royal_bedroom.png" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent p-stack-lg flex flex-col justify-end">
+                        <h3 class="font-headline-md text-headline-md mb-2">Indian Royal Bedrooms</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Beautifully crafted luxury
+                            bedrooms with royal Indian designs and rich wood textures.</p>
+                    </div>
+                </div>
+                <!-- Vertical Card Stack -->
+                <div class="md:col-span-5 space-y-8">
+                    <div class="group relative overflow-hidden h-[220px] sm:h-[250px] md:h-[284px] float-in-right tilt-card interactive"
+                        style="transition-delay: 200ms;">
+                        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            data-alt="Modern Modular Kitchen" src="modular_kitchen.png" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent p-stack-md flex flex-col justify-end">
+                            <h3 class="font-headline-md text-headline-md mb-1">Modular Kitchens</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Stylish, clean, and highly
+                                functional modular kitchen designs for modern homes.</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden h-[220px] sm:h-[250px] md:h-[284px] float-in-right tilt-card interactive"
+                        style="transition-delay: 400ms;">
+                        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            data-alt="Beautiful False Ceiling" src="false_ceiling.png" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent p-stack-md flex flex-col justify-end">
+                            <h3 class="font-headline-md text-headline-md mb-1">Beautiful False Ceilings</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Elegant false ceiling designs
+                                with custom lighting to brighten up your living space.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Artisan's Workshop - Immersive Section -->
+        <section class="py-section-gap relative overflow-hidden" id="process">
+            <div class="walnut-texture absolute inset-0 z-0" id="parallax-bg"></div>
+            <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent z-10"></div>
+            <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-10">
+            </div>
+            <div class="relative z-20 px-margin-page grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center">
+                <div class="fade-in-up">
+                    <div class="w-24 h-1 brushed-gold-bg mb-stack-lg"></div>
+                    <h2 class="font-display-xl text-3xl sm:text-4xl md:text-5xl lg:text-display-xl mb-stack-md italic">
+                        Our Work <br /> <span class="text-secondary brushed-gold interactive">Process</span></h2>
+                    <div class="space-y-stack-md">
+                        <div class="flex gap-gutter group interactive">
+                            <span
+                                class="font-display-xl text-headline-lg text-secondary/20 group-hover:text-secondary transition-colors duration-500">01</span>
+                            <div>
+                                <h4 class="font-headline-md text-headline-md text-secondary">Choosing the Best Materials
+                                </h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">We carefully select the
+                                    best high-quality wood and materials to match your space perfectly.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-gutter group interactive">
+                            <span
+                                class="font-display-xl text-headline-lg text-secondary/20 group-hover:text-secondary transition-colors duration-500">02</span>
+                            <div>
+                                <h4 class="font-headline-md text-headline-md text-secondary">Premium Custom
+                                    Craftsmanship</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">We use high-quality
+                                    woodworking methods so your furniture and decor last for generations.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-gutter group interactive">
+                            <span
+                                class="font-display-xl text-headline-lg text-secondary/20 group-hover:text-secondary transition-colors duration-500">03</span>
+                            <div>
+                                <h4 class="font-headline-md text-headline-md text-secondary">Perfect Finishing Touches
+                                </h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">We add beautiful finishing
+                                    touches, including gold accents and smooth polishes, to make it shine.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative float-in-right" style="transition-delay: 300ms;">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 border border-secondary/20 z-0"></div>
+                    <div class="relative z-10 tilt-card">
+                        <img class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl"
+                            data-alt="Woodworking process"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa5u8waPZOdrtY_fhqe3YB3gezA0BVKEdDsdyVCJJf5dyO-AnYEtHhUThRVRHNxu6ENhODWh5pLjxyPYlDwqv4HudTQga39_uOefUwrtuFZYHScCYrP5LxSDaXAWIacXxrXqFFcIp1YNrvRMJIe5YExcsDFzSOS7u25njBKrdC_4JoTI-XkDO4nR-3qeNIqR4qxLSZiXfuC949JZaC5cOhLUDrmAJaTVNGpr5f6Zk9rGcV7oQzpipIZG-uhtSDVdkvmg60Bt1hl8I" />
+                        <div
+                            class="absolute -bottom-8 -right-8 bg-surface-container-high p-stack-md border border-secondary/10">
+                            <p class="font-label-caps text-label-caps text-secondary uppercase italic">Designs in Motion
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial Section -->
+        <section class="py-section-gap px-margin-page text-center bg-surface">
+            <div class="max-w-3xl mx-auto fade-in-up">
+                <span class="material-symbols-outlined text-secondary text-5xl mb-stack-md"
+                    data-icon="format_quote">format_quote</span>
+                <blockquote
+                    class="font-display-xl text-lg sm:text-xl md:text-2xl lg:text-headline-lg italic mb-stack-lg leading-snug">
+                    "Shri Shyam Interior made my dream home a reality. The quality of work and attention to detail are
+                    truly outstanding. I highly recommend them!"
+                </blockquote>
+                <div class="gold-divider w-32 mx-auto mb-stack-md"></div>
+                <cite class="not-italic">
+                    <div class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Alistair
+                        Sterling</div>
+                    <div class="font-body-md text-body-md text-on-surface-variant">Luxury Home Owner</div>
+                </cite>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact"
+            class="py-section-gap px-margin-page bg-surface-container-low text-center relative overflow-hidden">
+            <div class="max-w-3xl mx-auto fade-in-up">
+                <span class="font-label-caps text-label-caps text-secondary">Get In Touch</span>
+                <h2 class="font-headline-lg text-3xl sm:text-4xl md:text-headline-lg mt-stack-sm mb-stack-md">Start Your
+                    Design Project</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg max-w-xl mx-auto">
+                    Have a query or ready to discuss your dream interior? Call us or send a direct message on WhatsApp.
+                    We are here to help you!
+                </p>
+                <div class="flex flex-col md:flex-row gap-8 justify-center items-center mb-stack-lg">
+                    <div
+                        class="flex items-center gap-3 bg-surface-container-high px-8 py-4 rounded-sm border border-secondary/15">
+                        <span class="material-symbols-outlined text-secondary">phone</span>
+                        <div class="text-left">
+                            <p class="font-label-caps text-[10px] text-secondary/60 uppercase">Call/WhatsApp</p>
+                            <a href="tel:+919999995962"
+                                class="font-headline-md text-xl sm:text-2xl md:text-headline-md text-secondary interactive">+91
+                                99999 95962</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://wa.me/919999995962?text=Hey,%20I'm%20looking%20for%20interior%20work" target="_blank"
+                    class="inline-flex items-center gap-3 brushed-gold-bg btn-liquid text-surface font-label-caps text-label-caps px-12 py-5 hover:scale-105 transition-all interactive rounded-sm">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.004 2C6.48 2 2.004 6.48 2.004 12C2.004 13.9 2.504 15.7 3.404 17.3L2.004 22L6.904 20.7C8.404 21.5 10.204 22 12.004 22C17.528 22 22.004 17.52 22.004 12C22.004 6.48 17.528 2 12.004 2ZM17.604 16.5C17.304 17.3 16.104 18 15.304 18.2C14.704 18.3 14.004 18.4 11.204 17.2C8.304 16 6.404 13 6.304 12.8C6.204 12.6 5.304 11.4 5.304 10.2C5.304 9 5.904 8.4 6.204 8.1C6.504 7.8 6.904 7.7 7.304 7.7C7.504 7.7 7.704 7.7 7.804 7.7C8.104 7.7 8.304 7.6 8.504 8.1C8.804 8.7 9.404 10.2 9.504 10.4C9.604 10.6 9.604 10.8 9.504 11C9.404 11.2 9.304 11.3 9.104 11.5C8.904 11.7 8.804 11.8 8.604 12C8.404 12.2 8.204 12.4 8.404 12.8C8.604 13.1 9.304 14.3 10.304 15.2C11.604 16.4 12.704 16.8 13.104 17C13.504 17.2 13.704 17.1 13.904 16.9C14.104 16.7 14.504 16.2 14.804 15.8C15.004 15.5 15.304 15.4 15.604 15.5C15.904 15.6 17.504 16.4 17.804 16.6C18.104 16.8 18.304 16.9 18.404 17C18.404 17.2 18.304 17.8 17.604 16.5Z" />
+                    </svg>
+                    Message Us on WhatsApp
+                </a>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer
+            class="bg-surface-container-lowest flex flex-col items-center gap-stack-lg px-margin-page text-center py-section-gap relative overflow-hidden">
+            <div class="bg-gradient-to-t from-secondary/5 to-transparent absolute inset-0"></div>
+            <div class="relative z-10 flex flex-col items-center gap-4">
+                <img src="logo.png" alt="Shri Shyam Logo"
+                    class="h-16 w-16 object-contain interactive transition-all duration-[600ms] hover:scale-110 hover:rotate-12 filter drop-shadow(0 0 6px rgba(233, 195, 73, 0.25))"
+                    style="image-rendering: -webkit-optimize-contrast;" />
+                <div
+                    class="font-display-xl text-2xl sm:text-3xl md:text-headline-lg text-secondary mb-stack-md brushed-gold interactive">
+                    Shri Shyam Interior</div>
+                <div class="flex gap-gutter flex-wrap justify-center mb-stack-lg">
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:tracking-widest transition-all duration-500 interactive"
+                        href="https://wa.me/919999995962?text=Hey,%20I'm%20looking%20for%20interior%20work"
+                        target="_blank">WhatsApp</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:tracking-widest transition-all duration-500 interactive"
+                        href="#">Instagram</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:tracking-widest transition-all duration-500 interactive"
+                        href="#">Privacy</a>
+                </div>
+                <div class="gold-divider w-full max-w-4xl opacity-20 mb-stack-lg"></div>
+                <p class="font-body-md text-body-md text-on-surface-variant opacity-50">© 2026 Shri Shyam Interior.
+                    Crafted for Excellence.</p>
+            </div>
+        </footer>
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/919999995962?text=Hey,%20I'm%20looking%20for%20interior%20work" target="_blank"
+            class="fixed bottom-6 right-6 z-50 bg-[#25d366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-2xl transition-transform duration-300 hover:scale-110 flex items-center justify-center interactive"
+            aria-label="Chat on WhatsApp">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12.004 2C6.48 2 2.004 6.48 2.004 12C2.004 13.9 2.504 15.7 3.404 17.3L2.004 22L6.904 20.7C8.404 21.5 10.204 22 12.004 22C17.528 22 22.004 17.52 22.004 12C22.004 6.48 17.528 2 12.004 2ZM17.604 16.5C17.304 17.3 16.104 18 15.304 18.2C14.704 18.3 14.004 18.4 11.204 17.2C8.304 16 6.404 13 6.304 12.8C6.204 12.6 5.304 11.4 5.304 10.2C5.304 9 5.904 8.4 6.204 8.1C6.504 7.8 6.904 7.7 7.304 7.7C7.504 7.7 7.704 7.7 7.804 7.7C8.104 7.7 8.304 7.6 8.504 8.1C8.804 8.7 9.404 10.2 9.504 10.4C9.604 10.6 9.604 10.8 9.504 11C9.404 11.2 9.304 11.3 9.104 11.5C8.904 11.7 8.804 11.8 8.604 12C8.404 12.2 8.204 12.4 8.404 12.8C8.604 13.1 9.304 14.3 10.304 15.2C11.604 16.4 12.704 16.8 13.104 17C13.504 17.2 13.704 17.1 13.904 16.9C14.104 16.7 14.504 16.2 14.804 15.8C15.004 15.5 15.304 15.4 15.604 15.5C15.904 15.6 17.504 16.4 17.804 16.6C18.104 16.8 18.304 16.9 18.404 17C18.404 17.2 18.304 17.8 17.604 16.5Z" />
+            </svg>
+        </a>
+    </div>
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('custom-cursor');
+        const follower = document.getElementById('cursor-follower');
+        const interactives = document.querySelectorAll('.interactive, button, a');
+
+        let mouseX = 0, mouseY = 0;
+        let ballX = 0, ballY = 0;
+        let followerX = 0, followerY = 0;
+
+        const isDesktop = window.innerWidth > 1024;
+
+        if (isDesktop) {
+            window.addEventListener('mousemove', e => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animateCursor() {
+                ballX += (mouseX - ballX) * 0.25;
+                ballY += (mouseY - ballY) * 0.25;
+                cursor.style.left = ballX + 'px';
+                cursor.style.top = ballY + 'px';
+
+                followerX += (mouseX - followerX) * 0.12;
+                followerY += (mouseY - followerY) * 0.12;
+                follower.style.left = followerX + 'px';
+                follower.style.top = followerY + 'px';
+
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+
+            interactives.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.classList.add('cursor-active');
+                    follower.classList.add('follower-active');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('cursor-active');
+                    follower.classList.remove('follower-active');
+                });
+            });
+        }
+
+        // Cinematic Slideshow Logic
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        if (slides.length > 0) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('opacity-100');
+                slides[currentSlide].classList.add('opacity-0');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.remove('opacity-0');
+                slides[currentSlide].classList.add('opacity-100');
+            }, 6000);
+        }
+
+        // Hero 3D Mouse Parallax
+        const hero = document.querySelector('section');
+        const parallaxBg = document.querySelector('.parallax-bg-layer');
+        const parallaxFg = document.querySelector('.parallax-fg-layer');
+
+        if (hero && parallaxBg && parallaxFg) {
+            hero.addEventListener('mousemove', e => {
+                const rect = hero.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const normX = x / (rect.width / 2);
+                const normY = y / (rect.height / 2);
+
+                document.documentElement.style.setProperty('--mx', normX);
+                document.documentElement.style.setProperty('--my', normY);
+
+                parallaxBg.style.transform = `translate3d(${normX * -25}px, ${normY * -25}px, 0)`;
+                parallaxFg.style.transform = `translate3d(${normX * 35}px, ${normY * 35}px, 0) rotateY(${normX * 10}deg) rotateX(${normY * -10}deg)`;
+            });
+
+            hero.addEventListener('mouseleave', () => {
+                parallaxBg.style.transform = 'translate3d(0px, 0px, 0px)';
+                parallaxFg.style.transform = 'translate3d(0px, 0px, 0px) rotateY(0deg) rotateX(0deg)';
+                document.documentElement.style.setProperty('--mx', '0');
+                document.documentElement.style.setProperty('--my', '0');
+            });
+        }
+
+        // 3D Card Tilt Logic for Bento Grid
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const normX = x / (rect.width / 2);
+                const normY = y / (rect.height / 2);
+
+                card.style.transform = `scale(1.02) rotateX(${normY * -10}deg) rotateY(${normX * 10}deg)`;
+            });
+
+            card.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1) rotateX(0deg) rotateY(0deg)';
+            });
+        });
+
+        // Intersection Observer for staggered entrances
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up, .float-in-left, .float-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Heading scroll parallax
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+
+            // Subtle heading scroll translation
+            document.querySelectorAll('.parallax-header').forEach(header => {
+                const speed = header.getAttribute('data-speed') || 0.05;
+                header.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+
+            // Wood Texture background scroll translation
+            const woodBg = document.getElementById('parallax-bg');
+            if (woodBg) {
+                woodBg.style.backgroundPosition = `center ${scrolled * 0.1}px`;
+            }
+        });
+
+        // Counter Animation Logic
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const countTo = parseInt(target.getAttribute('data-count'));
+                    const suffix = target.getAttribute('data-suffix') || '';
+                    const duration = 2000; // 2 seconds animation duration
+                    const startTime = performance.now();
+
+                    function updateNumber(now) {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+
+                        // Ease Out Exponential animation curve
+                        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                        const currentCount = Math.floor(easeProgress * countTo);
+
+                        target.textContent = currentCount + suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateNumber);
+                        } else {
+                            target.textContent = countTo + suffix;
+                            // Add a creative pulse bounce animation once complete
+                            target.classList.add('number-pulse');
+                        }
+                    }
+
+                    requestAnimationFrame(updateNumber);
+                    statObserver.unobserve(target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('[data-count]').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Liquid Button Click Effect
+        document.querySelectorAll('.btn-liquid').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '10px';
+                ripple.style.height = '10px';
+                ripple.style.background = 'rgba(255,255,255,0.4)';
+                ripple.style.borderRadius = '50%';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
+                ripple.style.pointerEvents = 'none';
+
+                btn.appendChild(ripple);
+                setTimeout(() => {
+                    ripple.style.transform = 'scale(20)';
+                    ripple.style.opacity = '0';
+                }, 10);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Smooth Scroll for Navigation Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const nav = document.querySelector('nav');
+                    const navHeight = nav ? nav.offsetHeight : 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

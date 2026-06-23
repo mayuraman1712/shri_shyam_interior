@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Collections | Shri Shyam Interior</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface": "#131313",
+              "surface-container-low": "#1c1b1b",
+              "surface-container-high": "#2a2a2a",
+              "surface-container-lowest": "#0e0e0e",
+              "primary": "#cdc4c5",
+              "secondary": "#e9c349",
+              "background": "#131313",
+              "on-surface": "#e5e2e1",
+              "on-surface-variant": "#cfc4c6"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "stack-sm": "0.5rem",
+              "stack-md": "1.5rem",
+              "gutter": "2rem",
+              "stack-lg": "3rem",
+              "margin-page": "5vw",
+              "section-gap": "8rem"
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        :root {
+            --cursor-size: 8px;
+        }
+
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(233, 195, 73, 0.25);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(233, 195, 73, 0.45);
+        }
+
+        /* Custom Cursor */
+        #custom-cursor {
+            width: var(--cursor-size);
+            height: var(--cursor-size);
+            background: #e9c349;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate3d(-50%, -50%, 0);
+            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease;
+        }
+
+        #cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(233, 195, 73, 0.35);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate3d(-50%, -50%, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: transparent;
+            transition: transform 0.08s ease-out, border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cursor-active {
+            width: 16px !important;
+            height: 16px !important;
+            background-color: #e9c349 !important;
+        }
+
+        .follower-active {
+            border-color: #e9c349 !important;
+            background-color: rgba(233, 195, 73, 0.08) !important;
+            transform: translate3d(-50%, -50%, 0) scale(1.5) !important;
+        }
+
+        .follower-gallery {
+            border-color: #e9c349 !important;
+            background-color: rgba(233, 195, 73, 0.15) !important;
+            transform: translate3d(-50%, -50%, 0) scale(1.7) !important;
+            color: #e9c349 !important;
+        }
+
+        .brushed-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #f7e681 50%, #b8860b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brushed-gold-bg {
+            background: linear-gradient(135deg, #d4af37 0%, #f7e681 50%, #b8860b 100%);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+
+        .brushed-gold-bg:hover {
+            box-shadow: 0 0 20px rgba(233, 195, 73, 0.35);
+        }
+
+        .btn-liquid {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-liquid::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 40%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.7s cubic-bezier(0.1, 0.8, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .btn-liquid:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Nav Glassmorphism bottom line */
+        .nav-glow {
+            position: relative;
+        }
+
+        .nav-glow::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(233, 195, 73, 0.25) 50%, transparent);
+        }
+
+        /* Accordion CSS drawer height transitions */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(0.25, 1, 0.3, 1);
+            will-change: max-height;
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid rgba(233, 195, 73, 0.12);
+            transition: border-color 0.5s ease, background-color 0.5s ease;
+        }
+
+        .accordion-item.active-item {
+            border-color: rgba(233, 195, 73, 0.45);
+            background-color: rgba(255, 255, 255, 0.015);
+        }
+
+        /* Gallery Cards and Neon spotlight bg glows */
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #181615;
+            border: 1px solid rgba(233, 195, 73, 0.08);
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+            z-index: 1;
+        }
+
+        .gallery-card:hover {
+            border-color: rgba(233, 195, 73, 0.55);
+            box-shadow: 0 0 25px rgba(233, 195, 73, 0.25);
+            transform: translateY(-5px);
+        }
+
+        /* Neon Spotlight Background Glow on mousemove */
+        .gallery-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: radial-gradient(
+                200px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(233, 195, 73, 0.18),
+                transparent 70%
+            );
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Click Shockwave Neon ring */
+        .neon-shockwave {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(233, 195, 73, 0.15) 0%, transparent 70%);
+            border: 2px solid rgba(233, 195, 73, 0.85);
+            box-shadow: 0 0 20px rgba(233, 195, 73, 0.7);
+            pointer-events: none;
+            z-index: 10;
+            transform: translate(-50%, -50%) scale(0);
+            animation: shockwave-glow 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+        }
+
+        @keyframes shockwave-glow {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        /* Image Container & Sheen Sweep Wave */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 280px;
+            z-index: 2;
+        }
+
+        .image-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                120deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 40%,
+                rgba(233, 195, 73, 0.35) 50%,
+                rgba(255, 255, 255, 0.1) 60%,
+                transparent 70%
+            );
+            transform: translateX(-100%);
+            transition: transform 0.9s cubic-bezier(0.25, 1, 0.3, 1);
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .gallery-card:hover .image-container::after {
+            transform: translateX(100%);
+        }
+
+        /* Wavy Image Effect - set to a very subtle micro-displacement */
+        .wavy-image {
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: filter, transform;
+            z-index: 1;
+        }
+
+        .wavy-image.wavy-active {
+            filter: url(#wavy-effect);
+        }
+
+        .gallery-card:hover .wavy-image {
+            transform: scale(1.04);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #custom-cursor, #cursor-follower { display: none; }
+            body { cursor: auto; }
+            .wavy-image { filter: none; }
+            .image-container::after { display: none; }
+        }
+
+        /* Hide custom cursor on mobile and tablet screens to optimize performance and usability */
+        @media (max-width: 1024px) {
+            #custom-cursor, #cursor-follower { display: none !important; }
+            body { cursor: auto !important; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<div id="custom-cursor"></div>
+<div id="cursor-follower"></div>
+
+<!-- Background Shader Canvas -->
+<div class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-50">
+    <canvas id="shader-canvas-collections" class="w-full h-full block"></canvas>
+</div>
+
+<!-- SVG Displacement Filter for Wavy Effect -->
+<svg class="absolute w-0 h-0" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="wavy-effect">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" seed="2" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" result="displacement" />
+    </filter>
+  </defs>
+</svg>
+
+<div class="relative z-10 min-h-screen flex flex-col justify-between">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-secondary/10 flex justify-between items-center px-margin-page py-6 w-full shadow-sm nav-glow">
+        <a href="code.html" class="flex items-center gap-3 interactive group logo-nav-wrapper">
+            <img src="logo.png" alt="Shri Shyam Logo" class="h-9 w-9 object-contain logo-nav-img transition-all duration-[700ms] group-hover:rotate-[360deg] group-hover:scale-110 filter drop-shadow(0 0 4px rgba(233, 195, 73, 0.15)) group-hover:drop-shadow(0 0 10px rgba(233, 195, 73, 0.45))" style="image-rendering: -webkit-optimize-contrast;"/>
+            <span class="font-display-xl text-base sm:text-lg md:text-headline-md tracking-widest text-primary group-hover:text-secondary transition-colors duration-300">Shri Shyam Interior</span>
+        </a>
+        <div class="flex gap-4 sm:flex-row sm:gap-6 items-center">
+            <a class="font-label-caps text-label-caps text-on-surface/70 hover:text-secondary transition-colors duration-300 interactive" href="code.html">Home</a>
+            <a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1 transition-colors duration-300 interactive" href="#">Collections</a>
+            <a class="font-label-caps text-label-caps text-on-surface/70 hover:text-secondary transition-colors duration-300 interactive" href="code.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Page Content Wrapper -->
+    <main class="flex-grow pt-32 px-margin-page pb-20">
+        <!-- Headline Section -->
+        <div class="text-center max-w-4xl mx-auto mb-16">
+            <span class="font-label-caps text-label-caps tracking-[0.3em] text-secondary mb-stack-sm block uppercase">Exclusive Showroom</span>
+            <h1 class="font-display-xl text-3xl sm:text-4xl md:text-5xl lg:text-[60px] leading-tight italic mb-stack-md">
+                Our Design <span class="brushed-gold">Collections</span>
+            </h1>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
+                Discover our bespoke designs across architectural segments. Click on any section below to expand the category, showing crystal-clear photos with an elegant neon backing spotlight glow and shimmer sweep.
+            </p>
+        </div>
+
+        <!-- Vertical Accordion Showcase -->
+        <div class="max-w-6xl mx-auto space-y-4">
+            
+            <!-- Section 1: Kitchens -->
+            <div class="accordion-item py-4 px-4 rounded-lg">
+                <button onclick="toggleSection('kitchen')" class="w-full flex justify-between items-center text-left py-4 focus:outline-none group interactive">
+                    <div class="flex items-center gap-6 md:gap-10">
+                        <span class="font-display-xl text-2xl md:text-4xl text-secondary/20 group-hover:text-secondary transition-colors duration-500">01</span>
+                        <h2 class="font-display-xl text-xl md:text-2xl text-on-surface group-hover:text-secondary transition-colors duration-300">Modular Kitchens</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-secondary/50 group-hover:text-secondary transition-all duration-300 text-2xl accordion-icon">add</span>
+                </button>
+                <div id="section-kitchen" class="accordion-content">
+                    <div class="pt-4 pb-8 border-t border-white/5">
+                        <p class="font-body-lg text-sm text-on-surface-variant max-w-3xl mb-8 leading-relaxed">
+                            Sleek lines, high-performance fittings, and custom wood paneling defining the contemporary heart of the home.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="kitchen_1.jpg" alt="Mint Green Glass Kitchen" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Mint Green Glass Kitchen</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">High-gloss seafoam panels with custom ceiling profile lighting.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="kitchen_2.jpg" alt="Taupe Gloss & Frosted Glass" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Taupe Gloss & Glass</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Seamless acrylic cabinets matched with modern frosted glass panels.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="kitchen_3.jpg" alt="Sky Blue Island Suite" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Sky Blue Island Suite</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Sky-blue cabinetry featuring a fluted wood breakfast bar.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="kitchen_4.jpg" alt="U-Shaped Azure Elegance" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Azure U-Shaped Suite</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Integrated appliances inside custom sky-blue cabinet panels.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Bedrooms -->
+            <div class="accordion-item py-4 px-4 rounded-lg">
+                <button onclick="toggleSection('bedroom')" class="w-full flex justify-between items-center text-left py-4 focus:outline-none group interactive">
+                    <div class="flex items-center gap-6 md:gap-10">
+                        <span class="font-display-xl text-2xl md:text-4xl text-secondary/20 group-hover:text-secondary transition-colors duration-500">02</span>
+                        <h2 class="font-display-xl text-xl md:text-2xl text-on-surface group-hover:text-secondary transition-colors duration-300">Royal Bedrooms</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-secondary/50 group-hover:text-secondary transition-all duration-300 text-2xl accordion-icon">add</span>
+                </button>
+                <div id="section-bedroom" class="accordion-content">
+                    <div class="pt-4 pb-8 border-t border-white/5">
+                        <p class="font-body-lg text-sm text-on-surface-variant max-w-3xl mb-8 leading-relaxed">
+                            Sumptuous bed chambers crafted with hand-polished dark walnut, brass inlay details, and regal headboard installations.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="royal_bedroom.png" alt="Indian Royal Bed Chamber" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Indian Royal Bed Chamber</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant uppercase tracking-wider">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80" alt="Walnut Canopy Suite" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Walnut Canopy Suite</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant uppercase tracking-wider">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Minimalist Master Bedroom" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Minimalist Master Bedroom</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant uppercase tracking-wider">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80" alt="Warm Ambient Suite" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Warm Ambient Suite</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant uppercase tracking-wider">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: False Ceilings -->
+            <div class="accordion-item py-4 px-4 rounded-lg">
+                <button onclick="toggleSection('ceiling')" class="w-full flex justify-between items-center text-left py-4 focus:outline-none group interactive">
+                    <div class="flex items-center gap-6 md:gap-10">
+                        <span class="font-display-xl text-2xl md:text-4xl text-secondary/20 group-hover:text-secondary transition-colors duration-500">03</span>
+                        <h2 class="font-display-xl text-xl md:text-2xl text-on-surface group-hover:text-secondary transition-colors duration-300">False Ceilings</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-secondary/50 group-hover:text-secondary transition-all duration-300 text-2xl accordion-icon">add</span>
+                </button>
+                <div id="section-ceiling" class="accordion-content">
+                    <div class="pt-4 pb-8 border-t border-white/5">
+                        <p class="font-body-lg text-sm text-on-surface-variant max-w-3xl mb-8 leading-relaxed">
+                            Multi-layered architectural ceilings featuring custom integrated LED coves, warm timber beams, and floating geometric layouts.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="ceiling_1.jpg" alt="Curved Cove Ceiling" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Curved Cove Ceiling</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Minimalist dome tray design featuring rounded corners and custom warm LED strip lights.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="ceiling_2.jpg" alt="Geometric Fan Tray" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Geometric Fan Tray</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Stepped rectangular design with integrated spotlights and warm ambient backlighting.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="ceiling_3.jpg" alt="Chandelier Accent Tray" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Chandelier Accent Tray</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Layered floating ceiling panel paired with custom cove LEDs and a premium chandelier.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="ceiling_4.jpg" alt="Linear LED Slot Ceiling" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Linear LED Slot Ceiling</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Flush gypsum ceiling incorporating parallel magnetic track slots and glowing profile lines.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: LCD Panels -->
+            <div class="accordion-item py-4 px-4 rounded-lg">
+                <button onclick="toggleSection('lcd')" class="w-full flex justify-between items-center text-left py-4 focus:outline-none group interactive">
+                    <div class="flex items-center gap-6 md:gap-10">
+                        <span class="font-display-xl text-2xl md:text-4xl text-secondary/20 group-hover:text-secondary transition-colors duration-500">04</span>
+                        <h2 class="font-display-xl text-xl md:text-2xl text-on-surface group-hover:text-secondary transition-colors duration-300">LCD Panels</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-secondary/50 group-hover:text-secondary transition-all duration-300 text-2xl accordion-icon">add</span>
+                </button>
+                <div id="section-lcd" class="accordion-content">
+                    <div class="pt-4 pb-8 border-t border-white/5">
+                        <p class="font-body-lg text-sm text-on-surface-variant max-w-3xl mb-8 leading-relaxed">
+                            State-of-the-art media centers featuring Italian bookmatched marble backdrops, hidden wire management, and floating walnut consoles.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="lcd_1.jpg" alt="Grey & White Console" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Grey & White Console</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Minimalist wall console with floating white acrylic cabinetry, a vertical shelf rack, and textured timber.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="lcd_2.jpg" alt="Marble & Wood Console" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Marble & Wood Console</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">White marble backing accented by wooden slats, open displaying shelves, and custom floating dual drawers.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="lcd_3.jpg" alt="Walnut Slat Media Center" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Walnut Slat Media Center</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Dark wood fluted panel backdrop with custom gold LED backlighting and a multi-tiered display rack.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="lcd_4.jpg" alt="Marble & Fluted Slate" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Marble & Fluted Slate</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Curvaceous grey marble backing flanked by charcoal fluted paneling and built-in display glass shelving.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Almirah -->
+            <div class="accordion-item py-4 px-4 rounded-lg">
+                <button onclick="toggleSection('almirah')" class="w-full flex justify-between items-center text-left py-4 focus:outline-none group interactive">
+                    <div class="flex items-center gap-6 md:gap-10">
+                        <span class="font-display-xl text-2xl md:text-4xl text-secondary/20 group-hover:text-secondary transition-colors duration-500">05</span>
+                        <h2 class="font-display-xl text-xl md:text-2xl text-on-surface group-hover:text-secondary transition-colors duration-300">Almirahs</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-secondary/50 group-hover:text-secondary transition-all duration-300 text-2xl accordion-icon">add</span>
+                </button>
+                <div id="section-almirah" class="accordion-content">
+                    <div class="pt-4 pb-8 border-t border-white/5">
+                        <p class="font-body-lg text-sm text-on-surface-variant max-w-3xl mb-8 leading-relaxed">
+                            Bespoke wardrobes featuring floor-to-ceiling frames, bronze glass sliding doors, built-in organizers, and custom wood details.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="almirah_1.jpg" alt="Mint & Oak Fitted Wardrobe" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Mint & Oak Wardrobe</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">High-gloss seafoam doors framed with warm oak panels and warm headboard cove backlighting.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="almirah_2.jpg" alt="Taupe & Gold Inlay Wardrobe" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Taupe & Gold Wardrobe</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Sleek matte grey wardrobe featuring brass inlay geometries and an integrated lighted vanity desk.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="almirah_3.jpg" alt="Illuminated Wardrobe Interior" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Illuminated Wardrobe Interior</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Open closet layout showing dedicated hanging rails, slide-out drawers, and warm LED shelf lights.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="almirah_4.jpg" alt="Modular Open Walk-in" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Modular Open Walk-in</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Custom modular wood-grain wardrobe system displaying various drawer stacks and hanging sections.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Fabrication Work -->
+            <div class="accordion-item py-4 px-4 rounded-lg">
+                <button onclick="toggleSection('fabrication')" class="w-full flex justify-between items-center text-left py-4 focus:outline-none group interactive">
+                    <div class="flex items-center gap-6 md:gap-10">
+                        <span class="font-display-xl text-2xl md:text-4xl text-secondary/20 group-hover:text-secondary transition-colors duration-500">06</span>
+                        <h2 class="font-display-xl text-xl md:text-2xl text-on-surface group-hover:text-secondary transition-colors duration-300">Fabrication Work</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-secondary/50 group-hover:text-secondary transition-all duration-300 text-2xl accordion-icon">add</span>
+                </button>
+                <div id="section-fabrication" class="accordion-content">
+                    <div class="pt-4 pb-8 border-t border-white/5">
+                        <p class="font-body-lg text-sm text-on-surface-variant max-w-3xl mb-8 leading-relaxed">
+                            Custom structural and decorative steel work, laser-cut screens, premium entry gates, and structural partition frames.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="fabrication_1.jpg" alt="Balcony Railings & Frames" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Balcony MS Railings</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Premium mild steel (MS) railings and window border frames fabricated for modern balconies.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="fabrication_2.jpg" alt="Anti-Bird Balcony Netting" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Anti-Bird Safety Netting</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">High-durability nylon netting grid installed across balconies to provide safety and prevent nesting.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="fabrication_3.jpg" alt="Sliding Safety Mesh Door" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Sliding Safety Mesh Door</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Diamond-grid aluminium safety grill paired with a sliding insect screen mesh door for home entryways.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Aluminium Work -->
+            <div class="accordion-item py-4 px-4 rounded-lg">
+                <button onclick="toggleSection('aluminium')" class="w-full flex justify-between items-center text-left py-4 focus:outline-none group interactive">
+                    <div class="flex items-center gap-6 md:gap-10">
+                        <span class="font-display-xl text-2xl md:text-4xl text-secondary/20 group-hover:text-secondary transition-colors duration-500">07</span>
+                        <h2 class="font-display-xl text-xl md:text-2xl text-on-surface group-hover:text-secondary transition-colors duration-300">Aluminium Work</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-secondary/50 group-hover:text-secondary transition-all duration-300 text-2xl accordion-icon">add</span>
+                </button>
+                <div id="section-aluminium" class="accordion-content">
+                    <div class="pt-4 pb-8 border-t border-white/5">
+                        <p class="font-body-lg text-sm text-on-surface-variant max-w-3xl mb-8 leading-relaxed">
+                            Premium safety entry doors, custom stainless steel security grills, decorative wood-inlay main gates, and protective sliding mesh frames.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="aluminium_1.jpg" alt="Luxury Wood-Inlay Safety Door" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Wood-Inlay Safety Door</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Premium wood-veneer panel inlay integrated with a robust black mild-steel frame and security grid.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="aluminium_2.jpg" alt="Stainless Steel Om Safety Door" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">SS Om Medallion Door</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">High-grade polished stainless steel (SS) safety door featuring a precision-crafted central Om symbol medallion.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="aluminium_3.jpg" alt="Classic Stainless Steel Grill Door" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">SS Horizontal Bar Gate</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Durable stainless steel security gate with a horizontal bar grill design for airflow and entry protection.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                            <div class="gallery-card group wavy-container interactive">
+                                <div class="image-container">
+                                    <img src="aluminium_4.jpg" alt="Slim-Frame Mesh Safety Door" class="w-full h-full object-cover wavy-image" style="image-rendering: -webkit-optimize-contrast;"/>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-headline-md text-md text-secondary mb-1">Slim Mesh Safety Door</h3>
+                                    <p class="font-body-md text-xs text-on-surface-variant mb-2">Heavy-duty bronze/wood-finish aluminium framework with high-tensile security mesh for bug-free ventilation.</p>
+                                    <p class="font-body-md text-[10px] text-secondary uppercase tracking-widest">Shri Shyam Interiors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest flex flex-col items-center gap-stack-lg px-margin-page text-center py-12 relative overflow-hidden nav-glow">
+        <div class="relative z-10 flex flex-col items-center gap-4">
+            <img src="logo.png" alt="Shri Shyam Logo" class="h-12 w-12 object-contain interactive transition-all duration-[600ms] hover:scale-110 hover:rotate-12 filter drop-shadow(0 0 6px rgba(233, 195, 73, 0.25))" style="image-rendering: -webkit-optimize-contrast;"/>
+            <div class="font-display-xl text-headline-md text-secondary brushed-gold">Shri Shyam Interior</div>
+            <p class="font-body-md text-xs text-on-surface-variant opacity-50 mt-2">© 2026 Shri Shyam Interior. All Solutions Under One Umbrella.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919999995962?text=Hey,%20I'm%20looking%20for%20interior%20work" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25d366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-2xl transition-transform duration-300 hover:scale-110 flex items-center justify-center interactive" aria-label="Chat on WhatsApp">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.004 2C6.48 2 2.004 6.48 2.004 12C2.004 13.9 2.504 15.7 3.404 17.3L2.004 22L6.904 20.7C8.404 21.5 10.204 22 12.004 22C17.528 22 22.004 17.52 22.004 12C22.004 6.48 17.528 2 12.004 2ZM17.604 16.5C17.304 17.3 16.104 18 15.304 18.2C14.704 18.3 14.004 18.4 11.204 17.2C8.304 16 6.404 13 6.304 12.8C6.204 12.6 5.304 11.4 5.304 10.2C5.304 9 5.904 8.4 6.204 8.1C6.504 7.8 6.904 7.7 7.304 7.7C7.504 7.7 7.704 7.7 7.804 7.7C8.104 7.7 8.304 7.6 8.504 8.1C8.804 8.7 9.404 10.2 9.504 10.4C9.604 10.6 9.604 10.8 9.504 11C9.404 11.2 9.304 11.3 9.104 11.5C8.904 11.7 8.804 11.8 8.604 12C8.404 12.2 8.204 12.4 8.404 12.8C8.604 13.1 9.304 14.3 10.304 15.2C11.604 16.4 12.704 16.8 13.104 17C13.504 17.2 13.704 17.1 13.904 16.9C14.104 16.7 14.504 16.2 14.804 15.8C15.004 15.5 15.304 15.4 15.604 15.5C15.904 15.6 17.504 16.4 17.804 16.6C18.104 16.8 18.304 16.9 18.404 17C18.404 17.2 18.304 17.8 17.604 16.5Z"/>
+        </svg>
+    </a>
+</div>
+
+<script>
+    // Custom Cursor Logic
+    const cursor = document.getElementById('custom-cursor');
+    const follower = document.getElementById('cursor-follower');
+
+    let mouseX = 0, mouseY = 0;
+    let ballX = 0, ballY = 0;
+    let followerX = 0, followerY = 0;
+
+    const isDesktop = window.innerWidth > 1024;
+
+    if (isDesktop) {
+        window.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            ballX += (mouseX - ballX) * 0.25;
+            ballY += (mouseY - ballY) * 0.25;
+            cursor.style.left = ballX + 'px';
+            cursor.style.top = ballY + 'px';
+
+            followerX += (mouseX - followerX) * 0.12;
+            followerY += (mouseY - followerY) * 0.12;
+            follower.style.left = followerX + 'px';
+            follower.style.top = followerY + 'px';
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+    }
+
+    function setupCursorListeners() {
+        if (!isDesktop) return; // Skip tracking interactive elements on mobile/tablet touchscreens
+        document.querySelectorAll('.interactive, button, a').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-active');
+                follower.classList.add('follower-active');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-active');
+                follower.classList.remove('follower-active');
+            });
+        });
+
+        document.querySelectorAll('.wavy-container').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                follower.textContent = 'SHINE';
+                follower.classList.add('follower-gallery');
+            });
+            el.addEventListener('mouseleave', () => {
+                follower.textContent = '';
+                follower.classList.remove('follower-gallery');
+            });
+        });
+    }
+
+    // Accordion Logic
+    function toggleSection(sectionId) {
+        const content = document.getElementById(`section-${sectionId}`);
+        const item = content.closest('.accordion-item');
+        const icon = item.querySelector('.accordion-icon');
+        
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        // Close all other accordion sections
+        document.querySelectorAll('.accordion-content').forEach(c => {
+            c.style.maxHeight = '0px';
+            const otherItem = c.closest('.accordion-item');
+            const otherIcon = otherItem.querySelector('.accordion-icon');
+            if (otherIcon) {
+                otherIcon.textContent = 'add';
+                otherIcon.style.transform = 'rotate(0deg)';
+            }
+            otherItem.classList.remove('active-item');
+        });
+        
+        if (!isOpen) {
+            // Open this one
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.textContent = 'close';
+            icon.style.transform = 'rotate(45deg)';
+            item.classList.add('active-item');
+            
+            // Auto-scroll to center the active section header
+            setTimeout(() => {
+                item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 350);
+        } else {
+            // Close this one
+            content.style.maxHeight = '0px';
+            icon.textContent = 'add';
+            icon.style.transform = 'rotate(0deg)';
+            item.classList.remove('active-item');
+        }
+    }
+
+    // Adjust max-height on window resize for active sections
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.accordion-item.active-item .accordion-content').forEach(c => {
+            c.style.maxHeight = 'none';
+            const height = c.scrollHeight;
+            c.style.maxHeight = height + 'px';
+        });
+    });
+
+    // Neon Spotlight and Click Shockwave Logic
+    function setupNeonEffects() {
+        document.querySelectorAll('.gallery-card').forEach(card => {
+            // Track mouse position for the spotlight gradient background (Desktop only)
+            if (isDesktop) {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', x + 'px');
+                    card.style.setProperty('--mouse-y', y + 'px');
+                });
+            }
+            
+            // Generate circular expanding neon shockwave on click (Optimized for both)
+            card.addEventListener('click', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX ? (e.clientX - rect.left) : (rect.width / 2);
+                const y = e.clientY ? (e.clientY - rect.top) : (rect.height / 2);
+                
+                const shock = document.createElement('div');
+                shock.className = 'neon-shockwave';
+                shock.style.left = x + 'px';
+                shock.style.top = y + 'px';
+                
+                // Set shockwave diameter dynamically
+                const size = Math.max(rect.width, rect.height) * 1.5;
+                shock.style.width = size + 'px';
+                shock.style.height = size + 'px';
+                
+                card.appendChild(shock);
+                setTimeout(() => shock.remove(), 600);
+            });
+        });
+    }
+
+    // Wave Controller (Handles Subtler Organic Glass-Refraction Shimmer)
+    const waveController = {
+        targetScale: 0,
+        currentScale: 0,
+        waveVal: 0,
+        animId: null,
+        activeElement: null,
+        
+        init() {
+            this.filterDisp = document.querySelector('#wavy-effect feDisplacementMap');
+            this.filterTurb = document.querySelector('#wavy-effect feTurbulence');
+            this.loop = this.loop.bind(this);
+        },
+        
+        hoverStart(imgElement) {
+            if (this.activeElement && this.activeElement !== imgElement) {
+                this.activeElement.classList.remove('wavy-active');
+            }
+            this.activeElement = imgElement;
+            this.activeElement.classList.add('wavy-active');
+            this.targetScale = 6; // subtle, crystal-clear glass-refraction scale
+            if (!this.animId) {
+                this.animId = requestAnimationFrame(this.loop);
+            }
+        },
+        
+        hoverEnd(imgElement) {
+            if (this.activeElement === imgElement) {
+                this.targetScale = 0;
+            }
+        },
+        
+        loop() {
+            this.currentScale += (this.targetScale - this.currentScale) * 0.12;
+            
+            if (Math.abs(this.currentScale) < 0.05 && this.targetScale === 0) {
+                this.currentScale = 0;
+                this.filterDisp.setAttribute('scale', 0);
+                if (this.activeElement) {
+                    this.activeElement.classList.remove('wavy-active');
+                    this.activeElement = null;
+                }
+                this.animId = null;
+                return;
+            }
+            
+            this.waveVal += 0.06;
+            this.filterDisp.setAttribute('scale', this.currentScale);
+            
+            const freqX = 0.04 + Math.sin(this.waveVal * 0.4) * 0.005;
+            const freqY = 0.05 + Math.cos(this.waveVal * 0.4) * 0.005;
+            this.filterTurb.setAttribute('baseFrequency', `${freqX} ${freqY}`);
+            
+            this.animId = requestAnimationFrame(this.loop);
+        }
+    };
+
+    function setupWavyHover() {
+        if (!isDesktop) return; // Disable hover-driven wave filters on touchscreens/mobile to optimize scrolling
+        document.querySelectorAll('.wavy-container').forEach(card => {
+            const img = card.querySelector('.wavy-image');
+            if (img) {
+                card.addEventListener('mouseenter', () => {
+                    waveController.hoverStart(img);
+                });
+                card.addEventListener('mouseleave', () => {
+                    waveController.hoverEnd(img);
+                });
+            }
+        });
+    }
+
+    // Default initialization
+    window.addEventListener('DOMContentLoaded', () => {
+        waveController.init();
+        setupCursorListeners();
+        setupWavyHover();
+        setupNeonEffects();
+        
+        // Open the first section by default
+        toggleSection('kitchen');
+    });
+</script>
+
+<!-- Background WebGL Shader (Same as Homepage for Uniform Luxury Aesthetic) -->
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-collections');
+
+  function syncSize() {
+    let w = canvas.clientWidth  || 1280;
+    let h = canvas.clientHeight || 720;
+    // On mobile and tablet, reduce resolution to 50% to prevent GPU fill-rate lag
+    const isMobile = window.innerWidth <= 1024;
+    if (isMobile) {
+      w = Math.floor(w * 0.5);
+      h = Math.floor(h * 0.5);
+    }
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+
+float snoise(vec2 v){
+  const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+           -0.577350269189626, 0.024390243902439);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod(i, 289.0);
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+  + i.x + vec3(0.0, i1.x, 1.0 ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+    dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 a0 = x - floor(x + 0.5);
+  vec3 g = a0 * vec3(m.x, m.y, m.z) + h * vec3(m.x, m.y, m.z);
+  return 130.0 * dot(m, g);
+}
+
+float fbm(vec2 p) {
+    float v = 0.0;
+    float a = 0.5;
+    vec2 shift = vec2(100.0);
+    float c = cos(0.5);
+    float s = sin(0.5);
+    mat2 rot = mat2(c, s, -s, c);
+    for (int i = 0; i < 4; ++i) {
+        v += a * snoise(p);
+        p = rot * p * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 aspect = vec2(u_resolution.x / u_resolution.y, 1.0);
+    vec2 p = (uv - 0.5) * aspect;
+    vec2 mouse = (u_mouse / u_resolution - 0.5) * aspect;
+    
+    float t = u_time * 0.08;
+    float mouseDist = length(p - mouse);
+    float mouseInfluence = smoothstep(0.4, 0.0, mouseDist);
+    p -= (p - mouse) * mouseInfluence * 0.12;
+    
+    vec2 q = vec2(
+        fbm(p + vec2(0.0, 0.0) + t * 0.5),
+        fbm(p + vec2(5.2, 1.3) + t * 0.3)
+    );
+    
+    vec2 r = vec2(
+        fbm(p + 4.0 * q + vec2(1.7, 9.2) + t * 0.7),
+        fbm(p + 4.0 * q + vec2(8.3, 2.8) + t * 0.4)
+    );
+    
+    float f = fbm(p + 4.0 * r);
+    
+    vec3 colorDark = vec3(0.06, 0.05, 0.05); // #0e0e0e
+    vec3 colorWalnut = vec3(0.12, 0.10, 0.09); // #1c1b1b
+    vec3 colorGold = vec3(0.81, 0.66, 0.22); // #d4af37
+    vec3 colorAmber = vec3(0.97, 0.82, 0.45); // Secondary glowing gold
+    
+    vec3 col = mix(colorDark, colorWalnut, clamp(f * 2.0, 0.0, 1.0));
+    
+    float veinPattern = smoothstep(0.28, 0.33, f) * smoothstep(0.42, 0.33, f);
+    col = mix(col, colorGold, veinPattern * 0.55);
+    
+    float light = exp(-mouseDist * 2.2);
+    col += colorAmber * light * 0.25;
+    
+    float vignette = uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y);
+    vignette = clamp(pow(16.0 * vignette, 0.3), 0.0, 1.0);
+    col *= vignette;
+    
+    gl_FragColor = vec4(col, 0.5);
+}`;
+
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+      console.error(gl.getShaderInfoLog(s));
+    }
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+    console.error(gl.getProgramInfoLog(prog));
+  }
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  let targetMouse = { x: canvas.width / 2, y: canvas.height / 2 };
+
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      targetMouse.x = nx * canvas.width;
+      targetMouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    
+    mouse.x += (targetMouse.x - mouse.x) * 0.1;
+    mouse.y += (targetMouse.y - mouse.y) * 0.1;
+
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</body>
+</html>
